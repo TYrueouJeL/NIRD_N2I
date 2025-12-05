@@ -1,14 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NIRD — Numérique Inclusif, Responsable et Durable</title>
+    <style>
+        :root{
+            --bg:#0f1724; --card:#0b1220; --accent:#8bd3c7; --muted:#9aa6b2; --glass: rgba(255,255,255,0.03);
+            font-family: Inter,Segoe UI,Roboto,Arial,system-ui,-apple-system;
+        }
+        html,body{height:100%;margin:0;background:linear-gradient(180deg,#071126 0%, #0c1b2b 100%);color:#eef2f7;}
+        .container{max-width:980px;margin:36px auto;padding:24px;background:var(--glass);border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+        header{display:flex;align-items:center;gap:16px}
+        .logo{width:72px;height:72px;border-radius:10px;background:linear-gradient(135deg,#0ea5a4,#2563eb);display:flex;align-items:center;justify-content:center;font-weight:700;color:#032;box-shadow:0 6px 18px rgba(2,6,23,0.5)}
+        h1{margin:0;font-size:1.6rem}
+        p.lead{margin:8px 0 18px;color:var(--muted)}
+        .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+        .card{background:var(--card);padding:16px;border-radius:10px}
+        .small{font-size:0.9rem;color:var(--muted)}
+        a.button{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:#042b2a;text-decoration:none;font-weight:600;margin-top:8px}
+        ul{padding-left:1.1rem;margin:8px 0}
+        .progress{height:12px;background:#0a1320;border-radius:8px;overflow:hidden;margin-top:10px}
+        .bar{height:100%;width:0;background:linear-gradient(90deg,#34d399,#06b6d4);transition:width .35s}
+        footer{margin-top:18px;font-size:0.85rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+        .links a{color:var(--muted);text-decoration:none;margin-right:10px}
+        .cta{display:flex;flex-direction:column;gap:8px}
+        button.cta-btn{padding:10px;border-radius:8px;border:0;background:#334155;color:#fff;cursor:pointer}
+        .challenge{display:flex;flex-direction:column;gap:8px}
+        .notice{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;font-size:0.95rem}
+        @media (max-width:880px){.grid{grid-template-columns:1fr;}.logo{width:56px;height:56px}}
+    </style>
 </head>
-
 <body>
+<main class="container" role="main">
+    <header>
+        <div class="logo" aria-hidden="true">NIRD</div>
+        <div>
+            <h1>Numérique Inclusif, Responsable et Durable (NIRD)</h1>
+            <p class="lead">Encourager les établissements scolaires à reprendre le pouvoir numérique : autonomie, sobriété, liberté et communauté.</p>
+        </div>
+    </header>
 
+    <section class="grid" aria-labelledby="intro">
+        <div>
+            <article class="card" id="intro" aria-describedby="intro-desc">
+                <h2 style="margin-top:0">Contexte</h2>
+                <p id="intro-desc" class="small">La fin du support de systèmes propriétaires et la montée des verrous techniques exposent les écoles à des dépendances coûteuses et contraignantes. NIRD promeut des alternatives libres et durables, adaptées aux réalités pédagogiques.</p>
+
+                <h3>Objectifs</h3>
+                <ul>
+                    <li>Réduire la dépendance aux Big Tech.</li>
+                    <li>Renforcer l'autonomie technique des équipes éducatives.</li>
+                    <li>Favoriser le partage de solutions libres entre établissements.</li>
+                    <li>Proposer un parcours pédagogique attractif et ludique.</li>
+                </ul>
+
+                <h3>Comment ça marche</h3>
+                <p class="small">La plateforme rassemble ressources, scénarios, défis et retours d'expérience. Elle permet une adoption progressive via des parcours et outils de suivi.</p>
+
+                <div style="margin-top:12px">
+                    <a class="button" href="https://nird.forge.apps.education.fr/" target="_blank" rel="noopener">Visiter NIRD</a>
+                    <a class="button" href="https://github.com/TYrueouJeL/NIRD_N2I" target="_blank" rel="noopener" style="margin-left:8px;background:#f3f4f6;color:#04111a">Voir le dépôt</a>
+                </div>
+            </article>
+
+            <article class="card" style="margin-top:14px">
+                <h3 style="margin-top:0">Ressources recommandées</h3>
+                <ul>
+                    <li><span class="small">Articles et vidéos listés sur le sujet (presse & témoignages d'établissements).</span></li>
+                    <li><span class="small">Guides pratiques et kits de migration vers des logiciels libres.</span></li>
+                    <li><span class="small">Communauté NIRD — contributions et retours d'expérience.</span></li>
+                </ul>
+                <p class="small">Tous les contenus partagés sur cette plateforme doivent utiliser des ressources libres de droit.</p>
+            </article>
+        </div>
+
+        <aside class="card" aria-labelledby="side-title">
+            <h3 id="side-title" style="margin-top:0">Parcours NIRD</h3>
+            <p class="small">Un mini-parcours pour s'engager étape par étape. Progrès sauvegardé dans votre navigateur.</p>
+
+            <div class="challenge" id="challenge">
+                <label class="small">Étapes</label>
+                <ol class="small">
+                    <li data-step="1">Inventaire du parc et des usages</li>
+                    <li data-step="2">Sélection d'alternatives libres</li>
+                    <li data-step="3">Pilote pédagogique et documentation</li>
+                </ol>
+
+                <div class="progress" aria-hidden="true"><div class="bar" id="progressBar"></div></div>
+                <div class="cta">
+                    <button class="cta-btn" id="nextBtn">Marquer l'étape suivante</button>
+                    <button class="cta-btn" id="resetBtn" style="background:#7c2d12">Réinitialiser le parcours</button>
+                </div>
+
+                <div class="notice small" id="status">Progrès: <span id="percent">0%</span> — Défis relevés: <span id="count">0</span></div>
+            </div>
+
+            <div style="margin-top:12px">
+                <p class="small">Licence: <strong>CC BY-SA 4.0</strong>. Produisez et partagez vos ressources sous licence libre.</p>
+            </div>
+        </aside>
+    </section>
+
+    <footer>
+        <div class="small">Projet NIRD — Nuit de l'Info 2025 • Production libre</div>
+        <div class="links small">
+            <a href="https://nird.forge.apps.education.fr/" target="_blank" rel="noopener">Site officiel NIRD</a>
+            <a href="https://github.com/TYrueouJeL/NIRD_N2I" target="_blank" rel="noopener">Code source</a>
+        </div>
+    </footer>
+</main>
+
+<script>
+    // Petite logique client pour le "Parcours NIRD"
+    (function(){
+        const steps = 3;
+        const progressBar = document.getElementById('progressBar');
+        const percentEl = document.getElementById('percent');
+        const countEl = document.getElementById('count');
+        const nextBtn = document.getElementById('nextBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        const STORAGE_KEY = 'nird_progress_v1';
+
+        function load(){
+            const s = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            return {step: s.step || 0, count: s.count || 0};
+        }
+        function save(state){
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        }
+        function render(state){
+            const pct = Math.round((state.step / steps) * 100);
+            progressBar.style.width = pct + '%';
+            percentEl.textContent = pct + '%';
+            countEl.textContent = state.count;
+        }
+
+        let state = load();
+        render(state);
+
+        nextBtn.addEventListener('click', () => {
+            if(state.step < steps){
+                state.step++;
+                state.count++;
+                save(state);
+                render(state);
+                // petit feedback visuel
+                nextBtn.textContent = state.step < steps ? 'Marquer l\'étape suivante' : 'Parcours terminé ✓';
+            }
+        });
+
+        resetBtn.addEventListener('click', () => {
+            state = {step:0,count:0};
+            save(state);
+            render(state);
+            nextBtn.textContent = 'Marquer l\'étape suivante';
+        });
+    })();
+</script>
 </body>
-
 </html>
